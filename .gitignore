@@ -1,0 +1,7 @@
+# Local database credentials (never commit)
+admin/includes/config.secrets.php
+
+# Logs and env
+admin/logs/
+.env
+.env.*

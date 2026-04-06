@@ -37,11 +37,14 @@ if (session_status() === PHP_SESSION_NONE) {
     }
 }
 
-// Database configuration
-define('DB_HOST', 'localhost');
-define('DB_USER', 'signlwzv_emiltonweb');
-define('DB_PASS', 'signlwzv_emiltonweb');
-define('DB_NAME', 'signlwzv_emiltonweb');
+// Database configuration (secrets in config.secrets.php — see config.secrets.php.example)
+$secretsFile = __DIR__ . '/config.secrets.php';
+if (is_readable($secretsFile)) {
+    require $secretsFile;
+} else {
+    http_response_code(500);
+    die('Missing database configuration. Copy admin/includes/config.secrets.php.example to config.secrets.php and set your credentials.');
+}
 
 // Paths and URLs
 // IMPORTANT:

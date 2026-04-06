@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hotel Amenities - Peregrine Hotel Rayfield</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1754cf",
+                        "background-light": "#ffffff",
+                        "background-alt": "#f8f9fc",
+                        "background-dark": "#111621",
+                        "text-main": "#0e121b",
+                        "text-muted": "#4b5563",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Smooth scrolling */
+        html { scroll-behavior: smooth; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background-light text-text-main font-display antialiased overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<nav class="sticky top-0 z-50 w-full bg-background-light/95 backdrop-blur-sm border-b border-gray-100 transition-all duration-300">
+<div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<!-- Logo -->
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">flight_takeoff</span>
+<div class="flex flex-col">
+<span class="text-lg font-bold tracking-tight text-text-main leading-tight">Peregrine Hotel</span>
+<span class="text-xs font-medium text-text-muted tracking-wide uppercase">Rayfield</span>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-text-main hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-medium text-text-main hover:text-primary transition-colors" href="#">Rooms</a>
+<a class="text-sm font-bold text-primary transition-colors" href="#">Amenities</a>
+<a class="text-sm font-medium text-text-main hover:text-primary transition-colors" href="#">Dining</a>
+<a class="text-sm font-medium text-text-main hover:text-primary transition-colors" href="#">Events</a>
+<a class="text-sm font-medium text-text-main hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+<!-- CTA -->
+<button class="hidden md:flex items-center justify-center h-10 px-6 bg-primary text-white text-sm font-bold rounded-lg hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/20">
+                    Book Now
+                </button>
+<!-- Mobile Menu Button -->
+<button class="md:hidden p-2 text-text-main hover:bg-gray-100 rounded-lg transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative w-full h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+<!-- Background Image with Overlay -->
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-black/30 z-10"></div>
+<div class="w-full h-full bg-cover bg-center bg-no-repeat transform hover:scale-105 transition-transform duration-[20s]" data-alt="Wide angle shot of modern luxury hotel exterior with pool and palm trees" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAsmyb7g_tD4XW07hxKcTqm7MDe-AUkrmF4sWpS4fI1XA6rKavcGNAxJSlQAqTKmTXXqth1fb3EoYR3-QvbSM4arG70wlFkMX3Ho2EpKWhMRMIsoTIRlLFk5lGcEZcXRIv2y21Fh2adICmEmuLgqItbIrlgOGqDx7ssOc_axZB1s2fCq0qijtgkhR5pS9WoFJg2p25o8lZJRHIPDAyGopkVgApMInS42toZqxf-8WYyQjD2Ho9WV5NIUoaghunKTmPiH5-mPvACg-8");'>
+</div>
+</div>
+<!-- Content -->
+<div class="relative z-20 text-center px-4 max-w-4xl mx-auto">
+<h1 class="text-4xl md:text-6xl font-black text-white tracking-tight mb-4 drop-shadow-lg">
+                Hotel Amenities &amp; Facilities
+            </h1>
+<p class="text-lg md:text-xl text-white/90 font-medium max-w-2xl mx-auto leading-relaxed drop-shadow-md">
+                Experience the pinnacle of relaxation and luxury at Peregrine Hotel Rayfield. Every detail is curated for your comfort.
+            </p>
+</div>
+</header>
+<!-- Main Content Container -->
+<main class="w-full flex flex-col">
+<!-- Section 1: Swimming Pool (Text Left, Image Right) -->
+<section class="py-24 bg-white">
+<div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+<!-- Text Content -->
+<div class="flex flex-col gap-6 order-2 lg:order-1">
+<div class="flex items-center gap-2 text-primary font-bold uppercase tracking-wider text-xs">
+<span class="w-8 h-[2px] bg-primary"></span>
+                            Relaxation
+                        </div>
+<h2 class="text-3xl md:text-4xl font-bold text-text-main leading-tight">
+                            Serene Swimming Pool
+                        </h2>
+<p class="text-text-muted text-base leading-relaxed">
+                            Unwind by our crystal-clear pool, perfect for a refreshing dip or lounging with a cocktail from the poolside bar. Enjoy the sunset in a tranquil atmosphere designed for ultimate relaxation. Our infinity edge design merges seamlessly with the horizon.
+                        </p>
+<div class="flex gap-4 pt-2">
+<button class="flex items-center gap-2 text-primary font-bold text-sm hover:underline underline-offset-4 decoration-2">
+                                View Gallery <span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+<!-- Feature Icons -->
+<div class="grid grid-cols-2 gap-4 mt-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary/80">pool</span>
+<span class="text-sm font-medium text-text-main">Heated Pool</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary/80">local_bar</span>
+<span class="text-sm font-medium text-text-main">Poolside Bar</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary/80">beach_access</span>
+<span class="text-sm font-medium text-text-main">Private Cabanas</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary/80">wb_sunny</span>
+<span class="text-sm font-medium text-text-main">Sun Deck</span>
+</div>
+</div>
+</div>
+<!-- Image Content -->
+<div class="relative order-1 lg:order-2 h-[400px] lg:h-[550px] w-full rounded-2xl overflow-hidden shadow-2xl group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Luxury infinity pool at sunset with lounge chairs" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA88ADkK70NmHq6yyWJ4c8Viy3XtPEbiMLSRzsRED8Ku4rt9hqNM0B-LZs6oUfrYsypmjFMtf7QGRsjH0oZGFmVEwXYSBvnBzm1try3m5kOLM7XDmAJ31XzErvNs3d6cbENuJ31AvJBFi2i9PFdIMh-RwyNmOOFCbsh1mR6yP3FOkJokm-eDCxcREh70mOX9kjvQRjRxFVhlrFsJ7om0WR9ahLMjPyXw3BQ71U48nj7JOeMtXAvnQiyPtyyNGAz0rTScvu4AXIy4AY");'>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Restaurant & Dining (Image Left, Text Right) -->
+<section class="py-24 bg-background-alt">
+<div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+<!-- Image Content -->
+<div class="relative h-[400px] lg:h-[550px] w-full rounded-2xl overflow-hidden shadow-2xl group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Elegant fine dining restaurant interior with set tables" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC4g4bR8wjsbceMk7dsVqNIzYdthe_J_RBqj2qoN8n7FnudQlYLxmxhMPtLyrQzuAvwhph08EWUgD4u2u1xuziB88sNxezVViWRsi8JDtJdK6mjkIdT9MxZjCt-cNRL71ZNftyja4q1dQM8EASQeHqbe-0CzEwKWmCNfa56SjxifNkN7aCnumFiBV0FQjYBA76skPTtxm9vyO--TGg4Ai5HQnA9t6wir17iO-WarJDzwnB8kUardoRAr367UF7uo2aU4JbVVyCrA8s");'>
+</div>
+</div>
+<!-- Text Content -->
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-2 text-primary font-bold uppercase tracking-wider text-xs">
+<span class="w-8 h-[2px] bg-primary"></span>
+                            Culinary
+                        </div>
+<h2 class="text-3xl md:text-4xl font-bold text-text-main leading-tight">
+                            Gourmet Restaurant &amp; Dining
+                        </h2>
+<p class="text-text-muted text-base leading-relaxed">
+                            Savor exquisite flavors from our world-class chefs. Our restaurant offers a blend of local Rayfield delicacies and international cuisine, served in an elegant setting perfect for intimate dinners or business lunches.
+                        </p>
+<div class="flex gap-4 pt-2">
+<button class="flex items-center gap-2 text-primary font-bold text-sm hover:underline underline-offset-4 decoration-2">
+                                Download Menu <span class="material-symbols-outlined text-lg">restaurant_menu</span>
+</button>
+</div>
+<!-- Mini Gallery Grid -->
+<div class="grid grid-cols-3 gap-3 mt-4">
+<div class="aspect-square rounded-lg overflow-hidden bg-gray-200">
+<div class="w-full h-full bg-cover bg-center hover:scale-110 transition-transform duration-500" data-alt="Plated gourmet food" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAra0f1wqHPOZDNaWphBFj5q5y4EMawYR8YlxoRH3q-sBqSEluQ3DyOtQq3fYy4TOdqCdY4TVBHhtTfAvM66MCrJOdb0E73rwErGjZRPqGyzPbvfQLMlcZmgHIAZPi-Mt-tJu6HGQlAzavX8vc3VoJTsbjQLJNKmrBKdzUp3vBiWLyolUgDB0-RgsqwTTTd4d8TyXiAmq-UmQGe_Q7WTQWaYJ897iMbokdm7Vdxqs9CFFmq3Oand3In__mK_Bf4Q_apFq9lb4jWF0k");'></div>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden bg-gray-200">
+<div class="w-full h-full bg-cover bg-center hover:scale-110 transition-transform duration-500" data-alt="Chef plating a dish" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB6KNndAono_WNqcSXFhPVlyjDrRV0UMIpHoZFERCrxY9p2tkt3eaVWGH3-dWqhWFHSgSGuFNb9vC_XKIdcjplRpYyNJ0w5ff3sepnZSa_wl7OCse7WuuFgsEBdaKDI9zArrq5VK-v9J3QP-FASAQCPa5dzu33U9cp3qeOIftcyrp4MpmERaeTNf00uvLPa5cA6GWSAlESUKkZuqTQPcN4XWC5y7bl5sPfTM72_9yXKcvnt1FLmDmBPovgzyZPWoKThhn1bHrU0Wfw");'></div>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden bg-gray-200">
+<div class="w-full h-full bg-cover bg-center hover:scale-110 transition-transform duration-500" data-alt="Cocktail drink on bar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAlEhv0T4-E2X0SA72LkeSrspTA8UNRvjq5dVYkchGx2cRzQqEccuvJ6OiTs-xS8V33JkFDdh-EQBnVdio7GMfqUdUhkzKj6PVe1ncbdRIgWu74ybgYW243PqFE1uVBZ0niceiapwB2MPAszpEvhcoUVx-s9jEl7PKFjWCPjT0RPSqcOVbtavVQ6c6Z6NRzKNiTbPGvPN8GcChwk1pgUwZHsN-mh5uDe7dH2BI2fONvIS5cwrd3eAA3qTt7q-hY5n9nNr4bVIGg9cE");'></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Leisure Spaces (Text Left, Image Right) -->
+<section class="py-24 bg-white">
+<div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+<!-- Text Content -->
+<div class="flex flex-col gap-6 order-2 lg:order-1">
+<div class="flex items-center gap-2 text-primary font-bold uppercase tracking-wider text-xs">
+<span class="w-8 h-[2px] bg-primary"></span>
+                            Lifestyle
+                        </div>
+<h2 class="text-3xl md:text-4xl font-bold text-text-main leading-tight">
+                            Exclusive Leisure Spaces
+                        </h2>
+<p class="text-text-muted text-base leading-relaxed">
+                            Discover our curated leisure spaces, including a private lounge and manicured gardens. Whether you seek a quiet corner to read or a social space to connect, our hotel offers the perfect environment for rejuvenation.
+                        </p>
+<div class="flex flex-col gap-4 mt-2">
+<div class="flex items-start gap-4 p-4 rounded-xl bg-background-alt hover:bg-gray-50 transition-colors cursor-default">
+<div class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">spa</span>
+</div>
+<div>
+<h4 class="font-bold text-text-main mb-1">Wellness Spa</h4>
+<p class="text-sm text-text-muted">Rejuvenate with our exclusive spa treatments and massage therapies.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 rounded-xl bg-background-alt hover:bg-gray-50 transition-colors cursor-default">
+<div class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">fitness_center</span>
+</div>
+<div>
+<h4 class="font-bold text-text-main mb-1">Fitness Center</h4>
+<p class="text-sm text-text-muted">State-of-the-art gym equipment available 24/7 for our guests.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Image Content -->
+<div class="relative order-1 lg:order-2 h-[400px] lg:h-[550px] w-full rounded-2xl overflow-hidden shadow-2xl group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Modern hotel lounge area with comfortable seating and natural light" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDjlooDD4eFlVpovEsmee3i8e4iHNaS0HkA08QfSZ2qimz7H2uCXfph_H7bVnZxN4Mz4uPOhQojSwAeDq2QejTkPhU-myFWxDNFMPQru2lDapWP-Tpw7veEKS-Vx2gxAZLeJTfqWokWrsQ_1SOvY0VhgLEn3SdM6CSGcmFGcCCiKdh9qHZBSWcTlYqKAK6We1VlllkIZN52Xu-hZFNtYst2aihKHUcS4dNHnVbGIg-2NaKGQTY6O7krvyikwcsX2ehMhVzxNbyqzaY");'>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Meetings & Events (Image Left, Text Right) -->
+<section class="py-24 bg-background-alt">
+<div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+<!-- Image Content -->
+<div class="relative h-[400px] lg:h-[550px] w-full rounded-2xl overflow-hidden shadow-2xl group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Modern conference room with long table and presentation screen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBRUilBAkTIsJ_s9b02T-72z2gVNx_Azp3p_DcRdF3lt9gc1Tm0pVZ8zMnHrXmuMYpXPe6AbEToruawTiGWoGp4mPN0rIwHkeq1qhjAEIfXIyDCKKBFDhUSGUQDnWpbyrcG_nXtFwBZiHZ2rfh-0jYwWX-LulTpojGs4mcsBPHzGtMwMRWGSJH2z-onN2wwJ2XkvIq8sLLYVtYHOR0hmAzVPD91kCZkXQe-dgSarlKFT7YK9BZojC_Wfw8O2NWpAFwX5NeGdAsFnKc");'>
+</div>
+</div>
+<!-- Text Content -->
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-2 text-primary font-bold uppercase tracking-wider text-xs">
+<span class="w-8 h-[2px] bg-primary"></span>
+                            Business
+                        </div>
+<h2 class="text-3xl md:text-4xl font-bold text-text-main leading-tight">
+                            Meetings &amp; Events
+                        </h2>
+<p class="text-text-muted text-base leading-relaxed">
+                            Host successful business meetings, conferences, or social events in our versatile venues. Equipped with high-speed Wi-Fi, modern AV technology, and dedicated support staff to ensure your event runs smoothly.
+                        </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+<div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+<h4 class="font-bold text-lg text-primary mb-1">Grand Hall</h4>
+<p class="text-sm text-text-muted">Up to 250 Guests</p>
+</div>
+<div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+<h4 class="font-bold text-lg text-primary mb-1">Boardroom</h4>
+<p class="text-sm text-text-muted">Executive seating for 12</p>
+</div>
+</div>
+<div class="flex gap-4 pt-4">
+<button class="flex items-center justify-center px-6 py-3 bg-primary text-white text-sm font-bold rounded-lg hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/20 w-fit">
+                                Inquire Now
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-background-dark text-white pt-20 pb-10">
+<div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+<!-- Brand -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">flight_takeoff</span>
+<div class="flex flex-col">
+<span class="text-lg font-bold leading-tight">Peregrine Hotel</span>
+<span class="text-xs font-medium text-gray-400 tracking-wide uppercase">Rayfield</span>
+</div>
+</div>
+<p class="text-gray-400 text-sm leading-relaxed">
+                            A member of Boulevard Hotel Group. Delivering modern luxury and exceptional service in the heart of Jos.
+                        </p>
+</div>
+<!-- Quick Links -->
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-white text-lg">Explore</h4>
+<ul class="flex flex-col gap-2 text-gray-400 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Accommodation</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Dining &amp; Bar</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Spa &amp; Wellness</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Local Experiences</a></li>
+</ul>
+</div>
+<!-- Contact -->
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-white text-lg">Contact Us</h4>
+<ul class="flex flex-col gap-3 text-gray-400 text-sm">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-lg mt-0.5">location_on</span>
+<span>12 Rayfield Avenue,<br/>Jos, Plateau State</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-lg">call</span>
+<span>+234 123 456 7890</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-lg">mail</span>
+<span>reservations@peregrine.com</span>
+</li>
+</ul>
+</div>
+<!-- Newsletter -->
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-white text-lg">Stay Updated</h4>
+<p class="text-gray-400 text-sm">Subscribe for exclusive offers and news.</p>
+<div class="flex gap-2">
+<input class="bg-gray-800 border-none text-white text-sm rounded-lg px-4 py-2 w-full focus:ring-2 focus:ring-primary" placeholder="Your email" type="email"/>
+<button class="bg-primary text-white p-2 rounded-lg hover:bg-blue-600 transition-colors">
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-gray-500 text-sm">© 2024 Peregrine Hotel Rayfield. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-gray-500 hover:text-white transition-colors text-sm" href="#">Privacy Policy</a>
+<a class="text-gray-500 hover:text-white transition-colors text-sm" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+</main>
+</body></html>

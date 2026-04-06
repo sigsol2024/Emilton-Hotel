@@ -1,0 +1,21 @@
+[05-Jan-2026 03:06:41 Africa/Lagos] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /home/signlwzv/web.emiltonhotels.com/includes/header.php on line 71
+[05-Jan-2026 03:06:42 Africa/Lagos] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /home/signlwzv/web.emiltonhotels.com/includes/header.php on line 71
+[05-Jan-2026 03:06:44 Africa/Lagos] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /home/signlwzv/web.emiltonhotels.com/includes/header.php on line 71
+[05-Jan-2026 03:06:50 Africa/Lagos] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /home/signlwzv/web.emiltonhotels.com/includes/header.php on line 71
+[05-Jan-2026 03:10:08 Africa/Lagos] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /home/signlwzv/web.emiltonhotels.com/includes/header.php on line 69
+[05-Jan-2026 03:10:16 Africa/Lagos] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /home/signlwzv/web.emiltonhotels.com/includes/header.php on line 69
+[05-Jan-2026 03:19:46 Africa/Lagos] PHP Parse error:  syntax error, unexpected identifier "DOMContentLoaded", expecting "," or ";" in /home/signlwzv/web.emiltonhotels.com/includes/header.php on line 119
+[05-Jan-2026 03:20:14 Africa/Lagos] PHP Parse error:  syntax error, unexpected identifier "DOMContentLoaded", expecting "," or ";" in /home/signlwzv/web.emiltonhotels.com/includes/header.php on line 119
+[05-Jan-2026 03:20:42 Africa/Lagos] PHP Parse error:  syntax error, unexpected identifier "DOMContentLoaded", expecting "," or ";" in /home/signlwzv/web.emiltonhotels.com/includes/header.php on line 119
+[05-Jan-2026 03:20:42 Africa/Lagos] PHP Parse error:  syntax error, unexpected identifier "DOMContentLoaded", expecting "," or ";" in /home/signlwzv/web.emiltonhotels.com/includes/header.php on line 119
+[05-Jan-2026 03:20:48 Africa/Lagos] PHP Parse error:  syntax error, unexpected identifier "DOMContentLoaded", expecting "," or ";" in /home/signlwzv/web.emiltonhotels.com/includes/header.php on line 119
+[06-Jan-2026 02:03:10 Africa/Lagos] File does not exist (may have been manually deleted): /home/signlwzv/web.emiltonhotels.com/assets/uploads/img_695c5825486391.55471295.jpg
+[06-Jan-2026 02:03:15 Africa/Lagos] File does not exist (may have been manually deleted): /home/signlwzv/web.emiltonhotels.com/assets/uploads/img_695c49a865e0f6.65816268.png
+[06-Jan-2026 02:03:45 Africa/Lagos] File uploaded successfully - Relative path: assets/uploads/img_695c5f71903794.73531479.png, Full path: /home/signlwzv/web.emiltonhotels.com/assets/uploads/img_695c5f71903794.73531479.png, File size: 99965
+[06-Jan-2026 02:04:05 Africa/Lagos] File uploaded successfully - Relative path: assets/uploads/img_695c5f85883ea1.15057654.jpeg, Full path: /home/signlwzv/web.emiltonhotels.com/assets/uploads/img_695c5f85883ea1.15057654.jpeg, File size: 20616
+[06-Jan-2026 02:34:34 Africa/Lagos] File uploaded successfully - Relative path: assets/uploads/img_695c66aa3b8b61.26752756.jpg, Full path: /home/signlwzv/web.emiltonhotels.com/assets/uploads/img_695c66aa3b8b61.26752756.jpg, File size: 370588
+[06-Jan-2026 02:36:19 Africa/Lagos] File uploaded successfully - Relative path: assets/uploads/img_695c67133228e9.55273035.jpg, Full path: /home/signlwzv/web.emiltonhotels.com/assets/uploads/img_695c67133228e9.55273035.jpg, File size: 222995
+[06-Jan-2026 02:44:20 Africa/Lagos] File uploaded successfully - Relative path: assets/uploads/img_695c68f4f0ad38.14052665.jpg, Full path: /home/signlwzv/web.emiltonhotels.com/assets/uploads/img_695c68f4f0ad38.14052665.jpg, File size: 287817
+[06-Jan-2026 02:44:48 Africa/Lagos] File uploaded successfully - Relative path: assets/uploads/img_695c69102bf0d6.34338251.jpg, Full path: /home/signlwzv/web.emiltonhotels.com/assets/uploads/img_695c69102bf0d6.34338251.jpg, File size: 289397
+[06-Jan-2026 02:45:22 Africa/Lagos] Media upload validation failed: File size exceeds maximum allowed size of 5.00 MB
+[06-Jan-2026 02:45:41 Africa/Lagos] File uploaded successfully - Relative path: assets/uploads/img_695c6945231539.82149696.jpg, Full path: /home/signlwzv/web.emiltonhotels.com/assets/uploads/img_695c6945231539.82149696.jpg, File size: 235921

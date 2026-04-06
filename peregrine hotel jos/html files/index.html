@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Peregrine Hotel Rayfield</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Playfair+Display:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1754cf",
+                        "background-light": "#ffffff",
+                        "background-dark": "#111621",
+                        "text-main": "#0e121b",
+                        "accent-black": "#111111",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; }
+    </style>
+</head>
+<body class="bg-background-light text-text-main antialiased selection:bg-primary/20">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Navbar -->
+<header class="fixed top-0 z-50 w-full transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-gray-100">
+<div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+<!-- Logo -->
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-size: 32px;">flight_takeoff</span>
+<h2 class="text-xl font-bold tracking-tight text-accent-black font-display uppercase">Peregrine</h2>
+</div>
+<!-- Desktop Menu -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="#">Rooms</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="#">Amenities</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="#">Dining</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="#">About</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+<!-- Action -->
+<div class="flex items-center">
+<button class="flex h-10 items-center justify-center rounded-lg bg-primary px-6 text-sm font-bold text-white transition-transform hover:scale-105 shadow-md shadow-primary/20">
+                        Book Now
+                    </button>
+<!-- Mobile Menu Button -->
+<button class="ml-4 md:hidden p-2 text-gray-600">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative h-[90vh] min-h-[600px] w-full flex items-center justify-center bg-gray-900">
+<!-- Background Image -->
+<div class="absolute inset-0 z-0 h-full w-full bg-cover bg-center bg-no-repeat" data-alt="Luxury hotel exterior with modern architecture at dusk" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuB9XXXbQdZQX_DSKfvOFjS6DzDFvRLPTQz11cwQVPId5SiSGjUKHegaIaE99DcfIMUE86x85uuPs3uTi5KVYcCWbsD-_VD2sWtHMHxgeUXXucKFTUp8V-g6CYIJePgR3EDI2EycLJsN_coiLRcxsAqeZDHGA4yDMgl_VRlQCJzcIRrLUkJ8wzYHufaV2H1BmYbF7pKncmCex-k3Q1hc7HoefvfAOMT21Vvsgz5HmiMdsz4zXUk4mvwoqsYA6cLEnPO5Ai_bSmMH5t4');">
+</div>
+<div class="relative z-10 flex flex-col items-center gap-8 px-4 text-center max-w-4xl mx-auto">
+<div class="flex flex-col gap-4">
+<h1 class="text-white text-5xl md:text-7xl font-bold leading-tight drop-shadow-lg">
+                        Experience Jos.<br/><span class="italic font-light">Stay in Comfort.</span>
+</h1>
+<p class="text-white/90 text-lg md:text-xl font-display font-light max-w-2xl mx-auto drop-shadow-md">
+                        A sanctuary of modern luxury in the heart of Rayfield.
+                    </p>
+</div>
+<div class="flex flex-wrap gap-4 justify-center mt-4">
+<button class="h-12 px-8 rounded-lg bg-accent-black text-white text-base font-bold transition-all hover:bg-black hover:scale-105 border border-transparent shadow-lg">
+                        Book Your Stay
+                    </button>
+<button class="h-12 px-8 rounded-lg bg-transparent text-white text-base font-bold transition-all hover:bg-white/10 border border-white backdrop-blur-sm">
+                        Explore Our Rooms
+                    </button>
+</div>
+</div>
+<!-- Booking Widget (Floating at bottom overlap) -->
+<div class="absolute bottom-0 translate-y-1/2 w-full px-4 z-20">
+<div class="mx-auto max-w-5xl rounded-xl bg-white p-4 shadow-2xl border border-gray-100/50">
+<form class="flex flex-col md:flex-row gap-4 md:gap-0 md:items-center">
+<!-- Check In -->
+<div class="flex-1 flex flex-col px-4 md:border-r border-gray-200">
+<label class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Check In</label>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-gray-400 text-lg">calendar_today</span>
+<input class="w-full border-none p-0 text-text-main focus:ring-0 placeholder:text-gray-800 font-medium font-display bg-transparent text-sm" placeholder="Add date" type="text"/>
+</div>
+</div>
+<!-- Check Out -->
+<div class="flex-1 flex flex-col px-4 md:border-r border-gray-200">
+<label class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Check Out</label>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-gray-400 text-lg">calendar_today</span>
+<input class="w-full border-none p-0 text-text-main focus:ring-0 placeholder:text-gray-800 font-medium font-display bg-transparent text-sm" placeholder="Add date" type="text"/>
+</div>
+</div>
+<!-- Guests -->
+<div class="flex-1 flex flex-col px-4 md:border-r border-gray-200">
+<label class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Guests</label>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-gray-400 text-lg">group</span>
+<select class="w-full border-none p-0 text-text-main focus:ring-0 font-medium font-display bg-transparent text-sm cursor-pointer">
+<option>2 Adults, 0 Children</option>
+<option>1 Adult, 0 Children</option>
+<option>2 Adults, 1 Child</option>
+</select>
+</div>
+</div>
+<!-- Room Type -->
+<div class="flex-1 flex flex-col px-4">
+<label class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Room Type</label>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-gray-400 text-lg">bed</span>
+<select class="w-full border-none p-0 text-text-main focus:ring-0 font-medium font-display bg-transparent text-sm cursor-pointer">
+<option>Standard Room</option>
+<option>Executive Suite</option>
+<option>Presidential Suite</option>
+</select>
+</div>
+</div>
+<!-- Search Button -->
+<div class="p-2">
+<button class="w-full md:w-auto h-12 md:h-14 px-8 rounded-lg bg-primary text-white font-bold flex items-center justify-center gap-2 hover:bg-blue-700 transition-colors">
+<span class="material-symbols-outlined">search</span>
+<span class="md:hidden">Search</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-white">
+<div class="mx-auto max-w-7xl">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="flex flex-col gap-8 order-2 lg:order-1">
+<div class="space-y-4">
+<span class="text-primary font-bold tracking-widest text-xs uppercase">Boulevard Hotel Group</span>
+<h2 class="text-4xl md:text-5xl font-serif text-accent-black leading-tight">
+                                A Refined Stay in the Heart of Rayfield
+                            </h2>
+<p class="text-gray-600 text-lg leading-relaxed font-light">
+                                Peregrine Hotel brings world-class hospitality to Jos. Part of the esteemed Boulevard Hotel Group, we offer generous spaces, modern amenities, and a serene atmosphere tailored for both business and leisure travelers seeking a moment of respite.
+                            </p>
+<p class="text-gray-600 text-lg leading-relaxed font-light">
+                                Immerse yourself in elegance where every detail is curated for your comfort. From our signature dining experiences to our plush, tailored suites.
+                            </p>
+</div>
+<div class="flex gap-4">
+<a class="group flex items-center gap-2 text-accent-black font-bold hover:text-primary transition-colors" href="#">
+                                Learn More About Us 
+                                <span class="material-symbols-outlined text-lg transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="order-1 lg:order-2 h-[500px] w-full rounded-xl overflow-hidden shadow-2xl relative group">
+<div class="absolute inset-0 bg-black/10 transition-opacity group-hover:bg-black/0"></div>
+<div class="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Modern hotel lobby with warm lighting and comfortable seating" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBXwfL--8AQE85elH-Wh25m9jRbCtgY2FgmOXTL9ydZHwgmGs3LxjFYOjp4PI73wd73yvIMF61YHb90MD1_XlTfLINbKB1O0TXDSy-8SPDBe0xAc5Kg1non_vCjzI0XPlt-XgOcM8PIrDUagyBBP3ym1sH-n1ogESWv2dOq9nCwgnfV0CidgkGsTfe56nxHYOpX03Z2pI4GEhiXzwfDsLuDQUPuoklZCrcXh-UUoogRhIEnSqH63LE8fWBT9slURc5KAYs8REtcjWc');">
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Rooms Preview -->
+<section class="py-20 px-4 sm:px-6 lg:px-8 bg-[#f8f9fc]">
+<div class="mx-auto max-w-7xl flex flex-col gap-12">
+<div class="flex flex-col md:flex-row justify-between items-end gap-6">
+<div class="max-w-2xl">
+<h2 class="text-3xl md:text-4xl font-serif text-accent-black mb-4">Accommodations</h2>
+<p class="text-gray-600 text-lg font-light">Designed for tranquility and style. Choose the space that fits your journey.</p>
+</div>
+<a class="hidden md:flex h-10 px-6 items-center rounded-lg border border-gray-300 text-sm font-bold text-accent-black hover:bg-gray-50 hover:border-gray-400 transition-colors" href="#">View All Rooms</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Room Card 1 -->
+<div class="group flex flex-col bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+<div class="h-64 w-full bg-cover bg-center relative" data-alt="Deluxe Room interior with king size bed and city view" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAbOMUrQubW3mPobJBh8z5BWm3QtR_by-b9-nP8UuATi9FQjyI08IFzyqzKcnFhHkbP0eoZ3Tk3SP9HN-3sZcO0XmJ3iWSzE2y_tPV4l88Z66fUFCvFcwSHhILQShzckwV6_-XuVmpjWgUDnHheWlAm4vVd5LTarIenKjj3Esy-l-5yMJOsYQqYTXMVlKRvI9o1UemWCOoK2_jIqgiBGG6O5xDSXqMB3Con3bDxw7WbFvozUNq4prjpJ9eKwMCDQtjYikStGLW9Rjg');">
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">Most Popular</div>
+</div>
+<div class="p-6 flex flex-col gap-3 flex-1">
+<h3 class="text-xl font-bold font-serif text-accent-black">Deluxe King Room</h3>
+<p class="text-gray-500 text-sm line-clamp-2">Spacious 35sqm room featuring a king-size bed, workstation, and city views.</p>
+<div class="mt-auto pt-4 flex items-center justify-between border-t border-gray-100">
+<div>
+<span class="text-xs text-gray-500">From</span>
+<p class="font-bold text-primary text-lg">₦85,000 <span class="text-xs font-normal text-gray-500">/night</span></p>
+</div>
+<button class="h-8 px-4 rounded bg-gray-100 text-xs font-bold text-accent-black hover:bg-gray-200">Details</button>
+</div>
+</div>
+</div>
+<!-- Room Card 2 -->
+<div class="group flex flex-col bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+<div class="h-64 w-full bg-cover bg-center" data-alt="Executive Suite living area with plush sofa" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBX3aiV-DAYwFluI_or0WtUry5nB-bxd-XidtdQEUhNyXhv74W511n06LHYxi0YMi7fqbBRjS0Zm9GAGCd_xwpRgbj0DcRA-V695YVQhP3uUquZmA6bSyu0RJ73kWvHA24fGQ_m8WTKXjoode3HrJmYRribfnMyX9C28kIlvHDNEdum7_M4LQZveBsfCmFbeTJM-ZmNvyLI2PmadB8WDmB3xZGoMPEkYop1kxfoTPobRToX-uTCK4LAJOp3BcH5-D8TWM08Qnl83Mg');">
+</div>
+<div class="p-6 flex flex-col gap-3 flex-1">
+<h3 class="text-xl font-bold font-serif text-accent-black">Executive Suite</h3>
+<p class="text-gray-500 text-sm line-clamp-2">Separate living area, enhanced amenities, and access to the executive lounge.</p>
+<div class="mt-auto pt-4 flex items-center justify-between border-t border-gray-100">
+<div>
+<span class="text-xs text-gray-500">From</span>
+<p class="font-bold text-primary text-lg">₦120,000 <span class="text-xs font-normal text-gray-500">/night</span></p>
+</div>
+<button class="h-8 px-4 rounded bg-gray-100 text-xs font-bold text-accent-black hover:bg-gray-200">Details</button>
+</div>
+</div>
+</div>
+<!-- Room Card 3 -->
+<div class="group flex flex-col bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+<div class="h-64 w-full bg-cover bg-center" data-alt="Presidential suite bedroom with luxurious decor" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA8oIDYGfmXRAwk16BHoXPE4oprTnMcaQpqBeP2D4Fa2KDU_FvP5s-ebkdlGa_RxMs7ORi77xWekCNtIkHMQwQ5j0h2BqeUEEby_4ovD-Nay79cV4YR3P0ranJB3e2HFxz0ZJc9JwHz8Xyo34nKANf9I_4NopzUz-3ZRP1z95qaIZgjcZXrmI9R_1eCBWt6t8Md5_EN1YTHCF-ip0-Y9ZzEzr079n_bXTSp9xX5v98s-5ks_19j_eGowAEQ7B82j5m8ksU2C_1rykM');">
+</div>
+<div class="p-6 flex flex-col gap-3 flex-1">
+<h3 class="text-xl font-bold font-serif text-accent-black">Presidential Suite</h3>
+<p class="text-gray-500 text-sm line-clamp-2">The ultimate luxury experience with panoramic views, private dining, and jacuzzi.</p>
+<div class="mt-auto pt-4 flex items-center justify-between border-t border-gray-100">
+<div>
+<span class="text-xs text-gray-500">From</span>
+<p class="font-bold text-primary text-lg">₦250,000 <span class="text-xs font-normal text-gray-500">/night</span></p>
+</div>
+<button class="h-8 px-4 rounded bg-gray-100 text-xs font-bold text-accent-black hover:bg-gray-200">Details</button>
+</div>
+</div>
+</div>
+</div>
+<div class="md:hidden flex justify-center mt-4">
+<a class="h-12 px-8 flex items-center rounded-lg bg-white border border-gray-300 text-sm font-bold text-accent-black shadow-sm" href="#">View All Rooms</a>
+</div>
+</div>
+</section>
+<!-- Amenities Section -->
+<section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+<div class="mx-auto max-w-7xl flex flex-col lg:flex-row gap-16">
+<div class="lg:w-1/3 flex flex-col gap-6">
+<h2 class="text-3xl md:text-4xl font-serif text-accent-black">Premium Amenities</h2>
+<p class="text-gray-600 font-light text-lg">
+                        We have curated every aspect of your stay to ensure maximum comfort and convenience.
+                    </p>
+<a class="text-primary font-bold text-sm hover:underline" href="#">View All Amenities</a>
+</div>
+<div class="lg:w-2/3 grid grid-cols-2 md:grid-cols-3 gap-px bg-gray-100 border border-gray-100 rounded-xl overflow-hidden">
+<!-- Item -->
+<div class="bg-white p-8 flex flex-col items-center justify-center gap-4 text-center hover:bg-gray-50 transition-colors group">
+<span class="material-symbols-outlined text-4xl text-gray-400 group-hover:text-primary transition-colors">wifi</span>
+<span class="font-bold text-sm text-accent-black">High-Speed Wi-Fi</span>
+</div>
+<!-- Item -->
+<div class="bg-white p-8 flex flex-col items-center justify-center gap-4 text-center hover:bg-gray-50 transition-colors group">
+<span class="material-symbols-outlined text-4xl text-gray-400 group-hover:text-primary transition-colors">pool</span>
+<span class="font-bold text-sm text-accent-black">Swimming Pool</span>
+</div>
+<!-- Item -->
+<div class="bg-white p-8 flex flex-col items-center justify-center gap-4 text-center hover:bg-gray-50 transition-colors group">
+<span class="material-symbols-outlined text-4xl text-gray-400 group-hover:text-primary transition-colors">restaurant</span>
+<span class="font-bold text-sm text-accent-black">Fine Dining</span>
+</div>
+<!-- Item -->
+<div class="bg-white p-8 flex flex-col items-center justify-center gap-4 text-center hover:bg-gray-50 transition-colors group">
+<span class="material-symbols-outlined text-4xl text-gray-400 group-hover:text-primary transition-colors">fitness_center</span>
+<span class="font-bold text-sm text-accent-black">Fitness Center</span>
+</div>
+<!-- Item -->
+<div class="bg-white p-8 flex flex-col items-center justify-center gap-4 text-center hover:bg-gray-50 transition-colors group">
+<span class="material-symbols-outlined text-4xl text-gray-400 group-hover:text-primary transition-colors">room_service</span>
+<span class="font-bold text-sm text-accent-black">24/7 Room Service</span>
+</div>
+<!-- Item -->
+<div class="bg-white p-8 flex flex-col items-center justify-center gap-4 text-center hover:bg-gray-50 transition-colors group">
+<span class="material-symbols-outlined text-4xl text-gray-400 group-hover:text-primary transition-colors">local_parking</span>
+<span class="font-bold text-sm text-accent-black">Secure Parking</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 border-t border-gray-100">
+<div class="mx-auto max-w-4xl text-center flex flex-col items-center gap-8">
+<h2 class="text-4xl md:text-5xl font-serif text-accent-black">Your Perfect Stay in Jos Awaits</h2>
+<p class="text-gray-600 text-lg font-light max-w-xl">
+                    Experience the perfect blend of luxury, comfort, and Nigerian hospitality. Book directly with us for the best rates.
+                </p>
+<button class="h-14 px-10 rounded-lg bg-accent-black text-white text-lg font-bold transition-all hover:bg-black hover:scale-105 shadow-xl shadow-gray-200">
+                    Book Your Stay
+                </button>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-white pt-16 pb-8 px-4 sm:px-6 lg:px-8 border-t border-gray-100">
+<div class="mx-auto max-w-7xl">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+<!-- Col 1: Brand -->
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-size: 28px;">flight_takeoff</span>
+<h3 class="text-lg font-bold text-accent-black font-display uppercase">Peregrine</h3>
+</div>
+<p class="text-sm text-gray-500 leading-relaxed">
+                            A member of the Boulevard Hotel Group. Redefining luxury hospitality in Plateau State.
+                        </p>
+<div class="flex gap-4">
+<a class="text-gray-400 hover:text-primary transition-colors" href="#"><span class="sr-only">Facebook</span><svg class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path></svg></a>
+<a class="text-gray-400 hover:text-primary transition-colors" href="#"><span class="sr-only">Instagram</span><svg class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772 4.902 4.902 0 011.772-1.153c.636-.247 1.363-.416 2.427-.465 1.067-.047 1.407-.06 3.808-.06zM12 5.352c-3.632 0-4.095.013-5.526.078-1.226.056-1.892.274-2.333.445-.584.227-1.002.498-1.442.938-.44.44-.71.858-.938 1.442-.17.441-.389 1.107-.445 2.333-.065 1.431-.078 1.894-.078 5.526s.013 4.095.078 5.526c.056 1.226.274 1.892.445 2.333.227.584.498 1.002.938 1.442.44.44.858.71 1.442.938.441.17 1.107.389 2.333.445 1.431.065 1.894.078 5.526.078s4.095-.013 5.526-.078c1.226-.056 1.892-.274 2.333-.445.584-.227 1.002-.498 1.442-.938.44-.44.71-.858.938-1.442.17-.441.389-1.107.445-2.333.065-1.431.078-1.894.078-5.526s-.013-4.095-.078-5.526c-.056-1.226-.274-1.892-.445-2.333-.227-.584-.498-1.002-.938-1.442-.44-.44-.858-.71-1.442-.938-.441-.17-1.107-.389-2.333-.445-1.431-.065-1.894-.078-5.526-.078zM12 8.448a3.552 3.552 0 100 7.104 3.552 3.552 0 000-7.104zm0 1.63a1.922 1.922 0 110 3.844 1.922 1.922 0 010-3.844zM18.895 6.33a1.086 1.086 0 11-2.172 0 1.086 1.086 0 012.172 0z" fill-rule="evenodd"></path></svg></a>
+</div>
+</div>
+<!-- Col 2: Navigation -->
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-accent-black">Hotel</h4>
+<ul class="flex flex-col gap-2 text-sm text-gray-500">
+<li><a class="hover:text-primary transition-colors" href="#">Our Story</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Accommodations</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Dining &amp; Bar</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Facilities</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+</ul>
+</div>
+<!-- Col 3: Support -->
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-accent-black">Guest Services</h4>
+<ul class="flex flex-col gap-2 text-sm text-gray-500">
+<li><a class="hover:text-primary transition-colors" href="#">Manage Booking</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contact Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">FAQ</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms &amp; Conditions</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<!-- Col 4: Contact -->
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-accent-black">Visit Us</h4>
+<div class="flex flex-col gap-4 text-sm text-gray-500">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-gray-400 text-lg mt-0.5">location_on</span>
+<p>12 Rayfield Avenue,<br/>Jos, Plateau State,<br/>Nigeria</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-gray-400 text-lg">call</span>
+<p>+234 800 123 4567</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-gray-400 text-lg">mail</span>
+<p>reservations@peregrinehotel.com</p>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
+<p>© 2024 Peregrine Hotel Rayfield. All rights reserved.</p>
+<p class="flex items-center gap-1">Designed with <span class="material-symbols-outlined text-xs">favorite</span> in Jos.</p>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

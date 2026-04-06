@@ -1,0 +1,2 @@
+[12-Jan-2026 03:54:11 UTC] PHP Warning:  file_put_contents(/home/sigsol/chateux.signature-solutions.com/admin/api/../../.cursor/debug.log): Failed to open stream: No such file or directory in /home/sigsol/chateux.signature-solutions.com/admin/api/media.php on line 26
+[19-Jan-2026 15:46:05 UTC] PHP Warning:  file_put_contents(/home/sigsol/peregrinehoteljos.com/admin/api/../../.cursor/debug.log): Failed to open stream: No such file or directory in /home/sigsol/peregrinehoteljos.com/admin/api/media.php on line 26

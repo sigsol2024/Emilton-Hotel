@@ -89,6 +89,12 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
+// Prevent email header injection
+if (preg_match("/[\r\n]/", $email)) {
+    jsonResponse(['success' => false, 'message' => 'Invalid email address'], 400);
+    exit;
+}
+
 // Validate length limits
 if (strlen($name) > 255) {
     jsonResponse(['success' => false, 'message' => 'Name is too long'], 400);
@@ -186,8 +192,12 @@ try {
         $emailMessage .= "Subject: $subject\n\n";
         $emailMessage .= "Message:\n$message\n";
         
-        $headers = "From: " . ($smtpFromEmail ?: $email) . "\r\n";
-        $headers .= "Reply-To: $email\r\n";
+        $fromEmail = $smtpFromEmail ?: $email;
+        // As a final guard, strip CRLF from header values
+        $fromEmail = str_replace(["\r", "\n"], '', $fromEmail);
+        $replyTo = str_replace(["\r", "\n"], '', $email);
+        $headers = "From: " . $fromEmail . "\r\n";
+        $headers .= "Reply-To: " . $replyTo . "\r\n";
         $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
         
         if (!mail($to, $emailSubject, $emailMessage, $headers)) {

@@ -7,25 +7,6 @@
 // Start output buffering to prevent any accidental output
 ob_start();
 
-// #region agent log
-$logPath = __DIR__ . '/../../.cursor/debug.log';
-$logData = [
-    'sessionId' => 'debug-session',
-    'runId' => 'run1',
-    'hypothesisId' => 'A',
-    'location' => 'media.php:start',
-    'message' => 'API endpoint called',
-    'data' => [
-        'requestUri' => $_SERVER['REQUEST_URI'] ?? '',
-        'scriptName' => $_SERVER['SCRIPT_NAME'] ?? '',
-        'requestMethod' => $_SERVER['REQUEST_METHOD'] ?? '',
-        'hasSession' => session_status() === PHP_SESSION_ACTIVE,
-    ],
-    'timestamp' => time() * 1000
-];
-file_put_contents($logPath, json_encode($logData) . "\n", FILE_APPEND);
-// #endregion
-
 require_once __DIR__ . '/../includes/config.php';
 require_once __DIR__ . '/../includes/auth.php';
 require_once __DIR__ . '/../includes/functions.php';
@@ -36,19 +17,6 @@ if (session_status() === PHP_SESSION_ACTIVE && isset($_SESSION['admin_id'])) {
 }
 
 requireLogin();
-
-// #region agent log
-$logData = [
-    'sessionId' => 'debug-session',
-    'runId' => 'run1',
-    'hypothesisId' => 'A',
-    'location' => 'media.php:after_requireLogin',
-    'message' => 'requireLogin passed, continuing',
-    'data' => [],
-    'timestamp' => time() * 1000
-];
-file_put_contents($logPath, json_encode($logData) . "\n", FILE_APPEND);
-// #endregion
 
 // Clear any output that might have been generated
 ob_clean();

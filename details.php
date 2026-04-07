@@ -16,19 +16,6 @@ if (empty($slug)) {
 
 $room = getRoomBySlug($slug);
 
-// SMOKING GUN TEST - Check if room is overwritten after header
-$roomBeforeHeader = $room;
-
-// TEMPORARY DEBUG - Remove after fixing (add ?debug=1 to URL to see)
-if (isset($_GET['debug'])) {
-    echo '<pre>';
-    echo "=== BEFORE HEADER ===\n";
-    echo "Room ID: " . ($roomBeforeHeader['id'] ?? 'NULL') . "\n";
-    echo "Room Title: " . ($roomBeforeHeader['title'] ?? 'NULL') . "\n";
-    echo "Room Price: " . ($roomBeforeHeader['price'] ?? 'NULL') . "\n";
-    exit;
-}
-
 if (!$room) {
     header('Location: rooms.php');
     exit;

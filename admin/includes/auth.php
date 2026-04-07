@@ -32,39 +32,10 @@ function isLoggedIn() {
  * Require login - redirect if not logged in (for pages) or return JSON error (for API)
  */
 function requireLogin() {
-    $logPath = __DIR__ . '/../../.cursor/debug.log';
-    $logDir = dirname($logPath);
-    
     // Check if we're in an API file by checking the calling file (most reliable method)
     $backtrace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 3);
     $callingFile = $backtrace[1]['file'] ?? '';
     $isApiFile = strpos($callingFile, '/api/') !== false || strpos($callingFile, '\\api\\') !== false;
-    
-    // #region agent log
-    $logData = [
-        'sessionId' => 'debug-session',
-        'runId' => 'run1',
-        'hypothesisId' => 'A',
-        'location' => 'auth.php:requireLogin',
-        'message' => 'requireLogin called',
-        'data' => [
-            'isLoggedIn' => isLoggedIn(),
-            'hasSessionAdminId' => isset($_SESSION['admin_id']),
-            'requestUri' => $_SERVER['REQUEST_URI'] ?? '',
-            'scriptName' => $_SERVER['SCRIPT_NAME'] ?? '',
-            'callingFile' => $callingFile,
-            'isApiFile' => $isApiFile,
-            'contentType' => $_SERVER['CONTENT_TYPE'] ?? '',
-            'httpAccept' => $_SERVER['HTTP_ACCEPT'] ?? '',
-            'sessionStatus' => session_status(),
-        ],
-        'timestamp' => time() * 1000
-    ];
-    // Suppress errors when writing to debug log
-    if (is_dir($logDir) || @mkdir($logDir, 0755, true)) {
-        @file_put_contents($logPath, json_encode($logData) . "\n", FILE_APPEND | LOCK_EX);
-    }
-    // #endregion
     
     if (!isLoggedIn()) {
         // Check if this is an API request - check multiple indicators
@@ -80,48 +51,8 @@ function requireLogin() {
                      || strpos($scriptName, 'api/media.php') !== false
                      || (isset($httpAccept) && strpos($httpAccept, 'application/json') !== false);
         
-        // #region agent log
-        $logData = [
-            'sessionId' => 'debug-session',
-            'runId' => 'run1',
-            'hypothesisId' => 'A',
-            'location' => 'auth.php:requireLogin',
-            'message' => 'User not logged in, checking if API request',
-            'data' => [
-                'isApiRequest' => $isApiRequest,
-                'requestUri' => $requestUri,
-                'scriptName' => $scriptName,
-                'httpAccept' => $httpAccept,
-                'isApiFile' => $isApiFile,
-                'check1' => strpos($requestUri, '/api/') !== false,
-                'check2' => strpos($scriptName, '/api/') !== false,
-                'check3' => strpos($requestUri, 'api/media.php') !== false,
-                'check4' => strpos($scriptName, 'api/media.php') !== false,
-            ],
-            'timestamp' => time() * 1000
-        ];
-        if (is_dir($logDir) || @mkdir($logDir, 0755, true)) {
-            @file_put_contents($logPath, json_encode($logData) . "\n", FILE_APPEND | LOCK_EX);
-        }
-        // #endregion
-        
         if ($isApiRequest) {
             // Return JSON error for API requests
-            // #region agent log
-            $logData = [
-                'sessionId' => 'debug-session',
-                'runId' => 'run1',
-                'hypothesisId' => 'A',
-                'location' => 'auth.php:requireLogin',
-                'message' => 'Returning JSON error for API request',
-                'data' => [],
-                'timestamp' => time() * 1000
-            ];
-            if (is_dir($logDir) || @mkdir($logDir, 0755, true)) {
-                @file_put_contents($logPath, json_encode($logData) . "\n", FILE_APPEND | LOCK_EX);
-            }
-            // #endregion
-            
             while (ob_get_level()) {
                 ob_end_clean();
             }
@@ -135,21 +66,6 @@ function requireLogin() {
             redirect(ADMIN_URL . 'index.php');
         }
     }
-    
-    // #region agent log
-    $logData = [
-        'sessionId' => 'debug-session',
-        'runId' => 'run1',
-        'hypothesisId' => 'A',
-        'location' => 'auth.php:requireLogin',
-        'message' => 'User is logged in, proceeding',
-        'data' => ['adminId' => $_SESSION['admin_id'] ?? null],
-        'timestamp' => time() * 1000
-    ];
-    if (is_dir($logDir) || @mkdir($logDir, 0755, true)) {
-        @file_put_contents($logPath, json_encode($logData) . "\n", FILE_APPEND | LOCK_EX);
-    }
-    // #endregion
 }
 
 /**

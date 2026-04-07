@@ -28,10 +28,9 @@ try {
     echo "✓ Found {$adminCount} admin user(s)\n";
     
     echo "\nMigration completed successfully!\n";
-    echo "Default admin credentials:\n";
-    echo "Username: admin\n";
-    echo "Password: Admin@123\n";
-    echo "\n⚠️  IMPORTANT: Please change the admin password after first login!\n";
+    echo "Admin login:\n";
+    echo "- Visit /admin/ and log in with your admin account.\n";
+    echo "- If you don't know the password, reset it using a secure process (do not ship reset scripts in production).\n";
     
 } catch(PDOException $e) {
     echo "Error: " . $e->getMessage() . "\n";

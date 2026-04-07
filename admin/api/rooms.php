@@ -15,32 +15,7 @@ header('Content-Type: application/json');
 $method = $_SERVER['REQUEST_METHOD'];
 $action = $_GET['action'] ?? '';
 
-// PHP-side debug logging (writes NDJSON locally when running in this workspace)
-function _dbg_log($hypothesisId, $location, $message, $data = []) {
-    $path = __DIR__ . '/../../.cursor/debug.log';
-    $payload = [
-        'sessionId' => 'debug-session',
-        'runId' => 'gallery-persist-pre',
-        'hypothesisId' => $hypothesisId,
-        'location' => $location,
-        'message' => $message,
-        'data' => $data,
-        'timestamp' => (int) round(microtime(true) * 1000),
-    ];
-    @file_put_contents($path, json_encode($payload) . PHP_EOL, FILE_APPEND);
-}
-
 try {
-    _dbg_log('H7', 'admin/api/rooms.php:entry', 'Rooms API entry', [
-        'method' => $method,
-        'action' => $action,
-        'id' => isset($_GET['id']) ? intval($_GET['id']) : null,
-        'request_uri' => $_SERVER['REQUEST_URI'] ?? null,
-        'content_type' => $_SERVER['CONTENT_TYPE'] ?? null,
-        'has_session_admin_id' => isset($_SESSION['admin_id']),
-        'session_status' => function_exists('session_status') ? session_status() : null,
-    ]);
-
     switch ($method) {
         case 'GET':
             if (isset($_GET['id'])) {
@@ -113,11 +88,6 @@ try {
             $headers = getAllHeaders();
             $csrfToken = $headers['X-CSRF-Token'] ?? ($_POST['csrf_token'] ?? '');
             if (!verifyCSRFToken($csrfToken)) {
-                _dbg_log('H1', 'admin/api/rooms.php:csrf', 'CSRF failed (POST)', [
-                    'header_keys' => array_slice(array_keys($headers ?? []), 0, 25),
-                    'csrf_from_header_len' => isset($headers['X-CSRF-Token']) ? strlen((string)$headers['X-CSRF-Token']) : 0,
-                    'csrf_from_post_len' => isset($_POST['csrf_token']) ? strlen((string)$_POST['csrf_token']) : 0,
-                ]);
                 jsonResponse(['success' => false, 'message' => 'Invalid security token'], 403);
             }
             
@@ -217,12 +187,6 @@ try {
             $headers = getAllHeaders();
             $csrfToken = $headers['X-CSRF-Token'] ?? ($_POST['csrf_token'] ?? '');
             if (!verifyCSRFToken($csrfToken)) {
-                _dbg_log('H1', 'admin/api/rooms.php:csrf', 'CSRF failed (PUT)', [
-                    'header_keys' => array_slice(array_keys($headers ?? []), 0, 25),
-                    'csrf_from_header_len' => isset($headers['X-CSRF-Token']) ? strlen((string)$headers['X-CSRF-Token']) : 0,
-                    'csrf_from_post_len' => isset($_POST['csrf_token']) ? strlen((string)$_POST['csrf_token']) : 0,
-                    'content_type' => $_SERVER['CONTENT_TYPE'] ?? null,
-                ]);
                 jsonResponse(['success' => false, 'message' => 'Invalid security token'], 403);
             }
             
@@ -240,15 +204,6 @@ try {
                 jsonResponse(['success' => false, 'message' => 'Invalid JSON data'], 400);
             }
 
-            _dbg_log('H5', 'admin/api/rooms.php:PUT', 'PUT received', [
-                'id' => $id,
-                'has_gallery_images' => array_key_exists('gallery_images', $data),
-                'gallery_images_type' => gettype($data['gallery_images'] ?? null),
-                'gallery_images_is_array' => is_array($data['gallery_images'] ?? null),
-                'gallery_images_count' => is_array($data['gallery_images'] ?? null) ? count($data['gallery_images']) : null,
-                'gallery_images_preview' => is_array($data['gallery_images'] ?? null) ? array_slice($data['gallery_images'], 0, 3) : substr((string)($data['gallery_images'] ?? ''), 0, 120),
-            ]);
-            
             $title = sanitize($data['title'] ?? '');
             $slug = generateSlug($data['slug'] ?? $title);
             $price = floatval($data['price'] ?? 0);
@@ -290,23 +245,6 @@ try {
                 $rating, $ratingScore, $location, $size, $tags, $includedItems, $goodToKnow, $bookUrl, $originalPrice, $urgencyMessage, $id
             ]);
 
-            // Verify stored value right after write
-            try {
-                $chk = $pdo->prepare("SELECT gallery_images FROM rooms WHERE id = ?");
-                $chk->execute([$id]);
-                $raw = $chk->fetchColumn();
-                $decoded = json_decode($raw ?? '[]', true);
-                _dbg_log('H6', 'admin/api/rooms.php:PUT', 'After UPDATE stored gallery_images', [
-                    'raw_len' => is_string($raw) ? strlen($raw) : null,
-                    'raw_prefix' => is_string($raw) ? substr($raw, 0, 80) : null,
-                    'decoded_type' => gettype($decoded),
-                    'decoded_is_array' => is_array($decoded),
-                    'decoded_count' => is_array($decoded) ? count($decoded) : null,
-                ]);
-            } catch (Exception $e) {
-                _dbg_log('H6', 'admin/api/rooms.php:PUT', 'After UPDATE verify failed', ['err' => $e->getMessage()]);
-            }
-            
             jsonResponse(['success' => true, 'message' => 'Room updated successfully']);
             break;
             
@@ -315,11 +253,6 @@ try {
             $headers = getAllHeaders();
             $csrfToken = $headers['X-CSRF-Token'] ?? ($_GET['csrf_token'] ?? '');
             if (!verifyCSRFToken($csrfToken)) {
-                _dbg_log('H1', 'admin/api/rooms.php:csrf', 'CSRF failed (DELETE)', [
-                    'header_keys' => array_slice(array_keys($headers ?? []), 0, 25),
-                    'csrf_from_header_len' => isset($headers['X-CSRF-Token']) ? strlen((string)$headers['X-CSRF-Token']) : 0,
-                    'csrf_from_query_len' => isset($_GET['csrf_token']) ? strlen((string)$_GET['csrf_token']) : 0,
-                ]);
                 jsonResponse(['success' => false, 'message' => 'Invalid security token'], 403);
             }
             

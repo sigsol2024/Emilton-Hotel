@@ -47,8 +47,8 @@ A comprehensive PHP/MySQL content management system for managing hotel/apartment
 4. **Default Login**
    - URL: `http://your-domain/admin/`
    - Username: `admin`
-   - Password: `Admin@123`
-   - ⚠️ **Change password immediately after first login!**
+   - Password: *(set during install / reset securely)*
+   - ⚠️ **Use a strong password and change it immediately after first login**
 
 ## File Structure
 

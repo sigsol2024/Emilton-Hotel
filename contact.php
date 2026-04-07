@@ -32,16 +32,17 @@ $contactEmail = getPageSection('contact', 'contact_email', 'info@emiltonhotels.c
 $contactFrontDesk = getPageSection('contact', 'contact_front_desk', '24 Hours / 7 Days');
 $mapAddress = getPageSection('contact', 'map_address', '');
 $mapEmbedUrl = getPageSection('contact', 'map_embed_url', '');
-$mapApiKey = 'AIzaSyDcWKVHACCy6CVx8H5a7djYjixjMhozsjQ';
+$mapApiKey = getSiteSetting('google_maps_api_key', '');
 
 $mapUrl = '';
-if (!empty($mapAddress)) {
-    $mapUrl = 'https://www.google.com/maps/embed/v1/place?key=' . $mapApiKey . '&q=' . urlencode($mapAddress);
-} elseif (!empty($mapEmbedUrl)) {
+if (!empty($mapEmbedUrl)) {
     $mapUrl = $mapEmbedUrl;
 } else {
-    // Default to Lagos, Nigeria if admin hasn't set an address yet
-    $mapUrl = 'https://www.google.com/maps/embed/v1/place?key=' . $mapApiKey . '&q=' . urlencode('Lagos, Nigeria');
+    $query = !empty($mapAddress) ? $mapAddress : 'Lagos, Nigeria';
+    // Use Maps Embed API only if an API key is configured in Settings.
+    if (!empty($mapApiKey)) {
+        $mapUrl = 'https://www.google.com/maps/embed/v1/place?key=' . rawurlencode($mapApiKey) . '&q=' . urlencode($query);
+    }
 }
 ?>
 <!DOCTYPE html>

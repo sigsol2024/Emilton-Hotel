@@ -70,6 +70,9 @@ $bookingCtaTitle = getPageSection('index', 'booking_cta_title', 'Shanghai Suite'
 $bookingCtaDescription = getPageSection('index', 'booking_cta_description', 'Availability is Limited — Book Your Stay Today.');
 $bookingCtaBackground = getPageSection('index', 'booking_cta_background', 'assets/img/about1.jpg');
 
+// Booking widget HTML (rendered in the hero bridge area)
+$bookingWidgetHtml = getPageSection('index', 'booking_widget_html', '');
+
 // Load rooms
 $featuredRooms = getRooms(['is_featured' => 1, 'is_active' => 1, 'limit' => 3]);
 $activeRooms = getRooms(['is_active' => 1]);
@@ -416,7 +419,12 @@ $activeRooms = getRooms(['is_active' => 1]);
             <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 15px;">
                 <div class="row">
                     <div class="col-md-12">
-                        <div id="booking-emilton"></div>
+                        <?php
+                        $widgetHtml = trim((string)$bookingWidgetHtml);
+                        if ($widgetHtml !== '') {
+                            echo $widgetHtml;
+                        }
+                        ?>
                     </div>
                 </div>
             </div>

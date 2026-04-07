@@ -107,6 +107,20 @@ $csrfToken = generateCSRFToken();
             </div>
         </div>
     </div>
+
+    <!-- Booking Widget (Bridge) -->
+    <div class="card">
+        <div class="card-header">
+            <h2>Booking Widget (Bridge)</h2>
+        </div>
+        <div style="padding: 20px;">
+            <div class="form-group">
+                <label for="booking_widget_html">Widget HTML</label>
+                <textarea id="booking_widget_html" name="booking_widget_html" rows="8" style="font-family: monospace; font-size: 12px;"><?= htmlspecialchars($sectionsArray['booking_widget_html'] ?? '', ENT_QUOTES, 'UTF-8') ?></textarea>
+                <p class="form-help">Paste the widget's required HTML here. It will render between the hero and the next section (inside the booking bridge).</p>
+            </div>
+        </div>
+    </div>
     
     <!-- About Section -->
     <div class="card">
@@ -708,6 +722,7 @@ document.getElementById('homepageForm').addEventListener('submit', function(e) {
     // Collect all section data
     const sectionKeys = [
         'hero_title', 'hero_background', 'hero_cta_text', 'hero_cta_link',
+        'booking_widget_html',
         'about_title', 'about_description', 'about_image', 'about_flower_image',
         'featured_rooms_title', 'feature_box_1_image', 'feature_box_1_title', 'feature_box_1_description',
         'feature_box_2_image', 'feature_box_2_title', 'feature_box_2_description',

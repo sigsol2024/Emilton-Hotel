@@ -29,14 +29,8 @@ A comprehensive PHP/MySQL content management system for managing hotel/apartment
    ```
 
 2. **Configuration**
-   - Edit `admin/includes/config.php`
-   - Update database credentials:
-     ```php
-     define('DB_HOST', 'localhost');
-     define('DB_USER', 'your_username');
-     define('DB_PASS', 'your_password');
-     define('DB_NAME', 'hotel_cms');
-     ```
+   - Copy `admin/includes/config.secrets.php.example` to `admin/includes/config.secrets.php`
+   - Update database credentials in `admin/includes/config.secrets.php`
 
 3. **Permissions**
    ```bash
@@ -49,6 +43,16 @@ A comprehensive PHP/MySQL content management system for managing hotel/apartment
    - Username: `admin`
    - Password: *(set during install / reset securely)*
    - ⚠️ **Use a strong password and change it immediately after first login**
+
+## Database Migration (CMS Upgrade)
+
+If you are upgrading an existing database, run:
+
+```bash
+mysql -u your_username -p your_database_name < config/migration_cms_upgrade.sql
+```
+
+This migration only adds default values in `site_settings` (no schema changes). It is safe to run multiple times.
 
 ## File Structure
 
